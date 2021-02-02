@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
-import express from 'express';
-import dotenv from 'dotenv';
-import cors from 'cors';
-import order from './routes/order.route';
-import bodyParser from 'body-parser';
+var mongoose = require('mongoose');
+var express = require('express');
+var dotenv = require('dotenv');
+var cors = require('cors');
+var order = require('./routes/order.route');
+var bodyParser = require('body-parser');
 
 dotenv.config();
 

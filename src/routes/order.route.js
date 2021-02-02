@@ -1,8 +1,7 @@
-import { Router } from 'express';
-import dotenv from 'dotenv';
-import Order from '../models/order.model';
-
-import TelegramBot from 'node-telegram-bot-api';
+const dotenv = require('dotenv');
+const Order = require('../models/order.model');
+const express = require('express');
+var TelegramBot = require('node-telegram-bot-api');
 
 dotenv.config();
 // replace the value below with the Telegram token you receive from @BotFather
@@ -11,7 +10,7 @@ const token = process.env.BOT_TOKEN;
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, { polling: true });
 
-const orderRouter = Router();
+const orderRouter = express.Router();
 
 orderRouter.post('/', async (req, res) => {
   try {
@@ -28,4 +27,4 @@ orderRouter.post('/', async (req, res) => {
   }
 });
 
-export default orderRouter;
+module.exports = orderRouter;
